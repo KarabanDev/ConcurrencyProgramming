@@ -6,13 +6,13 @@
 //  Copyright © 2015 Andrey Karaban. All rights reserved.
 //
 
-#import "AppDelegate.h"
+#import "EOCAppDelegate.h"
 
-@interface AppDelegate ()
+@interface EOCAppDelegate ()
 
 @end
 
-@implementation AppDelegate
+@implementation EOCAppDelegate
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {

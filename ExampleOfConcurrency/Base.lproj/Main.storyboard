@@ -1,25 +1,101 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Main View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="EOCMainViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2UO-cA-XKy">
+                                <rect key="frame" x="0.0" y="0.0" width="373" height="568"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="O3D-tR-YSw">
+                                        <rect key="frame" x="24" y="122" width="130" height="100"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xs3-Sp-tF8">
+                                        <rect key="frame" x="24" y="236" width="130" height="100"/>
+                                    </imageView>
+                                    <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="daA-Nx-yTl">
+                                        <rect key="frame" x="30" y="514" width="261" height="31"/>
+                                        <connections>
+                                            <action selector="ibaSliderValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="Jmq-9d-KNi"/>
+                                        </connections>
+                                    </slider>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6b7-RP-8gf">
+                                        <rect key="frame" x="132" y="474" width="56" height="32"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5hn-wL-KeI">
+                                        <rect key="frame" x="167" y="122" width="130" height="100"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PWU-Ma-0mO">
+                                        <rect key="frame" x="167" y="236" width="130" height="100"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gaJ-hw-vwI">
+                                        <rect key="frame" x="112" y="67" width="96" height="47"/>
+                                        <state key="normal" title="Start"/>
+                                        <connections>
+                                            <action selector="ibaStartBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DdS-rM-JyW"/>
+                                        </connections>
+                                    </button>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vBb-Pe-jP9">
+                                        <rect key="frame" x="136" y="382" width="51" height="31"/>
+                                        <connections>
+                                            <action selector="ibaSwitcherChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="Xug-PY-kiI"/>
+                                        </connections>
+                                    </switch>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="fMK-1l-88I">
+                                        <rect key="frame" x="41" y="26" width="239" height="29"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                                        <segments>
+                                            <segment title="GCD"/>
+                                            <segment title="Operations"/>
+                                        </segments>
+                                        <connections>
+                                            <action selector="ibaSegmentChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="sd0-Z1-DJW"/>
+                                        </connections>
+                                    </segmentedControl>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Serial / Concurrent dispatch" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ut3-iV-kyB">
+                                        <rect key="frame" x="68" y="421" width="184" height="29"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="ibSegmentedControl" destination="fMK-1l-88I" id="V9o-AM-JNh"/>
+                        <outlet property="ibSerial_concurrentLabel" destination="ut3-iV-kyB" id="68y-Kl-evL"/>
+                        <outlet property="ibSlider" destination="daA-Nx-yTl" id="aAb-Wf-hc6"/>
+                        <outlet property="ibSliderValue" destination="6b7-RP-8gf" id="hWG-ul-IDT"/>
+                        <outlet property="ibSwitcher" destination="vBb-Pe-jP9" id="lpn-Dh-0ZB"/>
+                        <outletCollection property="ibImagesViewForURL" destination="5hn-wL-KeI" id="evv-yH-80k"/>
+                        <outletCollection property="ibImagesViewForURL" destination="O3D-tR-YSw" id="RAG-Sz-Hr5"/>
+                        <outletCollection property="ibImagesViewForURL" destination="xs3-Sp-tF8" id="C5y-jy-JCY"/>
+                        <outletCollection property="ibImagesViewForURL" destination="PWU-Ma-0mO" id="2ju-lu-tVH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="350" y="335"/>
         </scene>
     </scenes>
 </document>
